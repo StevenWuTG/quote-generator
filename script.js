@@ -4,10 +4,26 @@ const quoteText = document.getElementById('quote')
 const authorText = document.getElementById('author')
 const twitterBtn = document.getElementById('twitter')
 const newQuoteBtn = document.getElementById('new-quote')
+const loader = document.getElementById('loader')
 
 let apiQuotes = []
 
+
+//show loading
+const loading = ( ) => {
+    console.log("loading")
+    loader.hidden = false
+    quoteContainer.hidden = true
+}
+// hide loading
+const complete = () => {
+    quoteContainer.hidden = false
+    loader.hidden = true
+}
+
+//new quote
 const newQoute = () => {
+    loading()
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
     if(!quote.author){
 
@@ -23,11 +39,14 @@ const newQoute = () => {
         quoteText.classList.remove('long-quote')
         
     }
+    //set quote, hide loading
     quoteText.textContent = quote.text
+    complete()
 }
 
 //fetch api data for quotes
 const getQuotes = async () => {
+    loading()
     fetch("./quotes.json")
     .then(r => {
         return r.json()
