@@ -1,0 +1,24 @@
+{
+  "name": "quote-generator",
+  "version": "1.0.0",
+  "description": "My favorite hip hop lyrics/quotes",
+  "main": "quotes.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenWuTG/quote-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenWuTG/quote-generator/issues"
+  },
+  "homepage": "https://github.com/StevenWuTG/quote-generator#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "require": "^2.4.20"
+  }
+}
